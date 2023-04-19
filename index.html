@@ -1,0 +1,96 @@
+<html>
+    
+<head>
+    <!-- Meta tags for more responsiveness -->
+    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    
+    <!-- Title of Page -->
+    
+    <title>PasswdGen - All New Password Generator</title>
+    
+    <!-- Stylesheets that we will be using - bootstrap, local css file and pretty-checkbox -->
+    
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+ 
+    <!-- Scripts that we will be using - Vuejs, jquery and bootstrap-->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+</head>
+    
+<body>
+    
+    <!-- Our navigation bar -  this navbar is created using classes of boostrap so it is responsive -->
+    <!-- This Navbar is also used to navigate through our components in Vue - so it uses the #navbar instance -->
+    
+    <div id="navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+        <div class="container">
+        <a class="navbar-brand" href="#" @click="currentView='home'">
+              PasswdGen
+            </a>
+
+        <!-- This makes our NavBar responsive using the navbar-toggler class -->
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            
+        <!-- We have used @click to navigate through our components -->
+            
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto"> 
+            <li class ="nav-item">
+                <a class="nav-link" href="#" @click="currentView='home'">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" @click="currentView='tips'">Tips</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" @click="currentView='about'">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" @click="currentView='contact'">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+        
+        <!-- This is where we have used a dynamic component and binded the currentView data from the vue instance here to navigate through components. It also has the <keep-alive> tag so that inactive components will be cached when navigating -->
+
+        <div class="container">
+        <keep-alive>
+        <component v-bind:is="currentView"></component>
+        </keep-alive>
+      </div>
+    </div>
+
+
+<!-- This is the footer of the website (created by using bootstrap elements) -->
+    
+<body class="d-flex flex-column">
+  <div id="page-content">
+    <div class="container text-center">
+      <div class="row justify-content-center">
+      </div>
+    </div>
+  </div>
+  <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+    <div class="container text-center">
+      <small>Copyright &copy; PasswdGen.com 2019</small>
+    </div>
+  </footer>
+</body>
+    </body>
+    
+      <!-- calling the main.js file -->
+    
+     <script type="text/javascript" src="main.js"></script>   
+</html>
